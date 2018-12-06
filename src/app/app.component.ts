@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'front-end';
+  title = 'Nuit Info 2018';
+  menus = [
+    {
+      name: 'home',
+      link: ''
+    },
+    {
+      name: 'login',
+      link: 'login'
+    },
+    {
+      name: 'register',
+      link: 'register'
+    }
+  ];
 }
