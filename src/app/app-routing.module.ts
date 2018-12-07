@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { RequiredStuffComponent } from './required-stuff/required-stuff.component';
 import { AuthGuard } from './helpers/auth-guard';
 import { WeatherComponent } from './weather/weather.component';
+import { BreakTimeComponent } from './break-time/break-time.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'weather',
     component: WeatherComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'break',
+    component: BreakTimeComponent,
     canActivate: [AuthGuard]
   },
   {

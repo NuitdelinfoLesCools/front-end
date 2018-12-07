@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { WeatherComponent } from './weather/weather.component';
 import { RegisterComponent } from './register/register.component';
 import { RequiredStuffComponent } from './required-stuff/required-stuff.component';
+import { BreakTimeComponent } from './break-time/break-time.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RequiredStuffComponent } from './required-stuff/required-stuff.componen
     RegisterComponent,
     LoginComponent,
     RequiredStuffComponent,
-    WeatherComponent
+    WeatherComponent,
+    BreakTimeComponent
   ],
   imports: [
     BrowserModule,

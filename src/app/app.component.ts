@@ -36,6 +36,11 @@ export class AppComponent {
       login: true
     },
     {
+      name: 'Break time',
+      link: 'break',
+      login: true
+    },
+    {
       name: 'Logout',
       link: 'logout',
       login: true
