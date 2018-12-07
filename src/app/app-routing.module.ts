@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { RequiredStuffComponent } from './required-stuff/required-stuff.component';
+import { AuthGuard } from './helpers/auth-guard';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   {
@@ -16,6 +19,16 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'required-stuff',
+    component: RequiredStuffComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'weather',
+    component: WeatherComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

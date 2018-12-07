@@ -26,6 +26,16 @@ export class AppComponent {
       login: false
     },
     {
+      name: 'Required stuff',
+      link: 'required-stuff',
+      login: true
+    },
+    {
+      name: 'Weather',
+      link: 'weather',
+      login: true
+    },
+    {
       name: 'Logout',
       link: 'logout',
       login: true

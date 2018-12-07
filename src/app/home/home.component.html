@@ -1,3 +1,44 @@
-<p>
-  home works!
-</p>
+<div class="row">
+  <div *ngIf="!currentUser" class="col-12">
+    <h2>Exploration dashboard</h2>
+    <p class="mb-2">Exploration dashboard is a tool to help scientists to meet they objectives in a hostile environment thank to the follows features:</p>
+    <ul>
+      <li>Remind foods and tools to take</li>
+      <li>Summary of weather data</li>
+      <li>Mouvements tracking</li>
+      <li>Mission summary</li>
+      <li>Alerts if something go wrong</li>
+    </ul>
+    <p>Please create a account or sign-in to start.</p>
+  </div>
+  <div *ngIf="currentUser" class="col-12">
+    <p class="mt-3">Welcome {{ currentUser.username }}! Here is your summary:</p>
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <h4 class="card-header">Alerts</h4>
+          <div class="card-body">
+            <div *ngFor="let alert of alerts" class="alert" [ngClass]="severityClass(alert.severity)" role="alert">
+              <h5 class="card-title">{{ alert.date | date }}</h5>
+              <p class="card-text">{{ alert.message }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+          <div class="card">
+            <h4 class="card-header">Your mission</h4>
+            <div class="card-body">
+              <div *ngFor="let mission of missions">
+                <h5 class="card-title">{{ mission.name }}</h5>
+                <p class="card-text">{{ mission.description }}.</p>
+                <p class="card-text">Deadline: {{ mission.deadline | date }}.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
