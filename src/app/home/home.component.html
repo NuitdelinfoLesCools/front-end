@@ -28,17 +28,29 @@
       </div>
 
       <div class="col-12 col-md-6">
-          <div class="card">
-            <h4 class="card-header">Your mission</h4>
-            <div class="card-body">
-              <div *ngFor="let mission of missions">
-                <h5 class="card-title">{{ mission.name }}</h5>
-                <p class="card-text">{{ mission.description }}.</p>
-                <p class="card-text">Deadline: {{ mission.deadline | date }}.</p>
-              </div>
+        <div class="card">
+          <h4 class="card-header">Your mission</h4>
+          <div class="card-body">
+            <div *ngFor="let mission of missions">
+              <h5 class="card-title">{{ mission.name }}</h5>
+              <p class="card-text">{{ mission.description }}.</p>
+              <p class="card-text">Deadline: {{ mission.deadline | date }}.</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12 col-md-12">
+        <div *ngIf="!noPosition" style="height: 500px;" leaflet 
+          [leafletOptions]="options"
+          [leafletLayers]="layers" [(leafletCenter)]="mapCenter">
+        </div>
+        <div *ngIf="noPosition" class="alert alert-danger mt-5" role="alert">
+          Position isn't supported !
+        </div>
+      </div>
     </div>
   </div>
 </div>

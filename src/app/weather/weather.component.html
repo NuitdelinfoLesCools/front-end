@@ -1,4 +1,4 @@
-<h2>Weather prediction</h2>
+<h2 class="my-3">Weather prediction</h2>
 
 <div class="row">
   <div *ngFor="let weather of weathers">
@@ -7,14 +7,14 @@
       <div class="card-body">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">At: {{ weather.date | date }}</li>
-          <li class="list-group-item"><i class="fa fa-thermometer-full" aria-hidden="true"></i>{{ weather.temp }}</li>
-          <li class="list-group-item"><i class="fa fa-sun-o" aria-hidden="true"></i> UV: {{ weather.uv }}</li>
+          <li class="list-group-item"><i class="fa fa-thermometer-full mr-2" aria-hidden="true"></i>{{ weather.temp }}</li>
+          <li class="list-group-item"><i class="fa fa-sun-o  mr-2" aria-hidden="true"></i> UV: {{ weather.uv }}</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<footer>
+<footer class="fixed-bottom container pb-3">
   Weather icon by <a href="https://www.freepik.com/free-vector/coloured-weather-icons-collection_895655.htm#term=weather&page=1&position=0" target="_blank">Titusurya</a>
 </footer>

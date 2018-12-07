@@ -22,4 +22,12 @@ export class UserService {
   getMissions(): Observable<Mission[]> {
     return this.http.get<any>(`${environment.apiBaseUrl}/mission/`).pipe(map(resp => resp.data));
   }
+
+  updatePos(lat, lon): Observable<any> {
+    return this.http.put<any>(`${environment.apiBaseUrl}/user/pos`, { lat, lon });
+  }
+
+  getPos(): Observable<any[]> {
+    return this.http.get<any>(`${environment.apiBaseUrl}/user/pos/`).pipe(map(resp => resp.data));
+  }
 }
