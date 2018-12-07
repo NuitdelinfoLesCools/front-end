@@ -13,7 +13,8 @@ export class RequiredStuffComponent implements OnInit {
   foodSettings = {
     actions: {
       add: true,
-      edit: true
+      edit: true,
+      delete: false
     },
     pager: {
       perPage: 25
@@ -27,6 +28,7 @@ export class RequiredStuffComponent implements OnInit {
       in_stock: {
         title: 'Taked',
         valuePrepareFunction: (value) => (value === true ? '<i class="fa fa-check"></i>' : '<i class="fa fa-times"></i>'),
+        type: 'html',
         filter: {
           type: 'checkbox',
           config: {
@@ -46,7 +48,8 @@ export class RequiredStuffComponent implements OnInit {
   equipmentSettings = {
     actions: {
       add: true,
-      edit: true
+      edit: true,
+      delete: false
     },
     pager: {
       perPage: 25
@@ -60,6 +63,7 @@ export class RequiredStuffComponent implements OnInit {
       in_stock: {
         title: 'Taked',
         valuePrepareFunction: (value) => (value === true ? '<i class="fa fa-check"></i>' : '<i class="fa fa-times"></i>'),
+        type: 'html',
         filter: {
           type: 'checkbox',
           config: {

@@ -9,6 +9,7 @@ import { UserService } from '../services/user.service';
 export class RegisterComponent implements OnInit {
 
   errorMessage: string;
+  successMessage: string;
 
   constructor(private userService: UserService) { }
 
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
       this.errorMessage = `Password don't match!`;
     } else {
       this.userService.register(email, username, password).subscribe(resp => {
-        console.log(resp);
+          this.successMessage = `Yehhh! Your account has been created successfully. You can now log-in`;
       }, error => {
         this.errorMessage = error.message;
       });

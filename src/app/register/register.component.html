@@ -15,11 +15,15 @@
   </div>
   <div class="form-group">
       <label for="password-confirm">Confirm password</label>
-      <input #confirmPassword type="password-confirm" class="form-control" id="password-confirm" placeholder="Confirm password">
+      <input #confirmPassword type="password" class="form-control" id="password-confirm" placeholder="Confirm password">
     </div>
   <button type="button" class="btn btn-primary" (click)="submitRegister(email.value, username.value, password.value, confirmPassword.value)">Register</button>
 
   <div *ngIf="errorMessage" class="alert-danger mt-2">
     {{ errorMessage }}
   </div>
+
+  <div *ngIf="successMessage" class="alert-success mt-2">
+      {{ successMessage }}
+    </div>
 </form>
