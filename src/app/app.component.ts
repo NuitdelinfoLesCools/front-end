@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
+import { User } from './models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +12,46 @@ export class AppComponent {
   title = 'Nuit Info 2018';
   menus = [
     {
-      name: 'home',
+      name: 'Home',
       link: ''
     },
     {
-      name: 'login',
-      link: 'login'
+      name: 'Login',
+      link: 'login',
+      login: false
     },
     {
-      name: 'register',
-      link: 'register'
+      name: 'Register',
+      link: 'register',
+      login: false
+    },
+    {
+      name: 'Logout',
+      link: 'logout',
+      login: true
     }
   ];
+
+  currentLink = '';
+  currentUser?: User;
+
+  constructor(private authService: AuthenticationService, private router: Router) {
+    this.authService.currentUser.subscribe(u => this.currentUser = u);
+  }
+
+  getFilteredMenu() {
+    if (this.currentUser) {
+      return this.menus.filter(m => m.login !== false);
+    }
+    return this.menus.filter(m => m.login !== true);
+  }
+
+  navigateTo(link: string) {
+    if (link === 'logout') {
+      this.authService.logout();
+      link = '';
+    }
+    this.currentLink = link;
+    this.router.navigate([link]);
+  }
 }

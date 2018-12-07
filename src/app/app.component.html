@@ -5,8 +5,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li *ngFor="let menu of menus" class="nav-item">
-        <a class="nav-link" routerLink="{{ menu.link }}">{{ menu.name }}</a>
+      <li *ngFor="let menu of getFilteredMenu()" class="nav-item">
+        <a class="nav-link" [class.active]="menu.link == currentLink" (click)="navigateTo(menu.link)">{{ menu.name }}</a>
       </li>
     </ul>
   </div>

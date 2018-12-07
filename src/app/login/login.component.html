@@ -1,3 +1,19 @@
-<p>
-  login works!
-</p>
+<form>
+  <h2 class="my-2">Login into your account</h2>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input #username type="text" class="form-control" id="username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input #password type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="submitLogin(username.value, password.value)">Login</button>
+
+  <div *ngIf="errorMessage" class="alert-danger mt-2">
+    {{ errorMessage }}
+  </div>
+  
+  <p class="mt-2">Not register? <a routerLink="/register">Create an account!</a></p>
+</form>
